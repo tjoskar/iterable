@@ -6,3 +6,4 @@ src
 .travis.yml
 tsconfig.json
 wallaby.js
+dist/test
