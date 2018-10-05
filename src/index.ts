@@ -8,6 +8,14 @@ export function filter<T>(predicate: (el: T) => boolean) {
   }
 }
 
+export function map<T, R>(fn: (currentValue: T) => R) {
+  return function*(arr: IterableIterator<T> | T[]) {
+    for (let el of arr) {
+      yield fn(el)
+    }
+  }
+}
+
 export function reduce<T>(acc: (prev: T, curr: T, index: number) => T): (arr: IterableIterator<T> | T[]) => T
 export function reduce<T>(acc: (prev: T, curr: T, index: number) => T, init: T): (arr: IterableIterator<T> | T[]) => T
 export function reduce<T, R>(acc: (prev: R, curr: T, index: number) => R, init: R): (arr: IterableIterator<T> | T[]) => R

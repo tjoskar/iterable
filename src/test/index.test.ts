@@ -1,4 +1,4 @@
-import { filter, reduce, some, findBest, take, skip, compose, pipe } from '../'
+import { filter, reduce, some, findBest, take, skip, compose, pipe, map } from '../'
 
 test(`Filter out string longer than 3`, () => {
   // Arrange
@@ -10,6 +10,18 @@ test(`Filter out string longer than 3`, () => {
 
   // Assert
   expect(result).toEqual(['abc', 'a'])
+})
+
+test(`Map number to strings`, () => {
+  // Arrange
+  const arr = [1, 2, 3, 4]
+  const fn = (n: number) => String(n)
+
+  // Act
+  const result = Array.from(map(fn)(arr))
+
+  // Assert
+  expect(result).toEqual(['1', '2', '3', '4'])
 })
 
 test(`Concat all strings`, () => {

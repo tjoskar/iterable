@@ -19,7 +19,7 @@ const myLargeArray = [ 1, 2, 3, 4, 5, 6, ... ]
 const myTransformedArray = pipe(
   map(n => n ** 2),
   filter(n => n % 2 === 0)
-)
+)(myLargeArray)
 
 for (let n of myTransformedArray) {
   console.log(n) // 4, 16, 36
