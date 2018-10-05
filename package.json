@@ -1,0 +1,52 @@
+{
+  "name": "@tjoskar/iterable",
+  "description": "Iterate your data",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest",
+    "start": "tsc --watch",
+    "prepublishOnly": "tsc"
+  },
+  "author": "tjoskar <kontakta@oskarkarlsson.nu>",
+  "bugs": {
+    "url": "https://github.com/tjoskar/iterable/issues",
+    "email": "kontakta@oskarkarlsson.nu"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^23.3.3",
+    "typescript": "^3.1.1",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.3"
+  },
+  "homepage": "https://github.com/tjoskar/iterable",
+  "keywords": [
+    "iterable",
+    "iterator",
+    "generator"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjoskar/iterable"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "src/.*\\.(test|spec)\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  },
+  "prettier": {
+    "printWidth": 500,
+    "singleQuote": true,
+    "semi": false,
+    "useTabs": false,
+    "tabWidth": 2
+  }
+}

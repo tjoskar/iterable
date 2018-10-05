@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es2017",
+    "noEmit": false,
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitThis": true,
+    "sourceMap": true,
+    "declaration": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "rootDir": "./src",
+    "pretty": true,
+    "esModuleInterop": true
+  }
+}

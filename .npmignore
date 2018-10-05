@@ -1,0 +1,8 @@
+node_modules
+src
+.editorconfig
+.gitignore
+.prettierignore
+.travis.yml
+tsconfig.json
+wallaby.js
