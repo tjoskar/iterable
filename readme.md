@@ -1,4 +1,4 @@
-# iterable [![Build Status](https://travis-ci.org/Tjoskar/iterable.svg?branch=master)](https://travis-ci.org/Tjoskar/iterable) [![codecov](https://codecov.io/gh/Tjoskar/iterable/branch/master/graph/badge.svg)](https://codecov.io/gh/Tjoskar/iterable)
+# iterable [![Build Status](https://travis-ci.org/tjoskar/iterable.svg?branch=master)](https://travis-ci.org/tjoskar/iterable) [![codecov](https://codecov.io/gh/tjoskar/iterable/branch/master/graph/badge.svg)](https://codecov.io/gh/tjoskar/iterable)
 
 > Iterate your data
 
