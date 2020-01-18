@@ -1,4 +1,5 @@
-# iterable [![Build Status](https://travis-ci.org/tjoskar/iterable.svg?branch=master)](https://travis-ci.org/tjoskar/iterable) [![codecov](https://codecov.io/gh/tjoskar/iterable/branch/master/graph/badge.svg)](https://codecov.io/gh/tjoskar/iterable)
+# iterable
+
 
 > Iterate your data
 
@@ -54,10 +55,7 @@ function* myIterableIterator() {
 const result = filter(i => i < 10)(myIterableIterator)
 
 for (let i of result) {
-  if (i === 5) {
-    break
-  }
-  console.log(i) // 0, 1, 2, 3, 4
+  console.log(i) // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 }
 ```
 
@@ -74,7 +72,7 @@ function* myIterableIterator() {
 const result = map(i => i * i)(myIterableIterator)
 
 for (let i of result) {
-  if (i === 5) {
+  if (i === 25) {
     break
   }
   console.log(i) // 0, 1, 4, 9, 16
