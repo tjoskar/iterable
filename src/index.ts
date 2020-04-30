@@ -1,5 +1,5 @@
 export function filter<T>(predicate: (el: T) => boolean) {
-  return function*(arr: IterableIterator<T> | T[]) {
+  return function* (arr: IterableIterator<T> | T[]) {
     for (let el of arr) {
       if (predicate(el)) {
         yield el
@@ -8,10 +8,22 @@ export function filter<T>(predicate: (el: T) => boolean) {
   }
 }
 
-export function map<T, R>(fn: (currentValue: T) => R) {
-  return function*(arr: IterableIterator<T> | T[]) {
+export function map<T, R>(fn: (currentValue: T, index: number) => R) {
+  return function* (arr: IterableIterator<T> | T[]) {
+    let i = 0
     for (let el of arr) {
-      yield fn(el)
+      yield fn(el, i)
+      i = i + 1
+    }
+  }
+}
+
+export function forEach<T>(callbackfn: (value: T, index: number) => void) {
+  return function (arr: IterableIterator<T> | T[]): void {
+    let i = 0
+    for (let el of arr) {
+      callbackfn(el, i);
+      i = i + 1
     }
   }
 }
@@ -20,7 +32,7 @@ export function reduce<T>(acc: (prev: T, curr: T, index: number) => T): (arr: It
 export function reduce<T>(acc: (prev: T, curr: T, index: number) => T, init: T): (arr: IterableIterator<T> | T[]) => T
 export function reduce<T, R>(acc: (prev: R, curr: T, index: number) => R, init: R): (arr: IterableIterator<T> | T[]) => R
 export function reduce<T, R>(acc: (prev: R, curr: T, index: number) => R, init?: R) {
-  return function(arr: IterableIterator<T> | T[]): R {
+  return function (arr: IterableIterator<T> | T[]): R {
     let prev = init as R
     let i = 0
     for (let el of arr) {
@@ -37,7 +49,7 @@ export function reduce<T, R>(acc: (prev: R, curr: T, index: number) => R, init?:
 }
 
 export function some<T>(predicate: (el: T) => boolean) {
-  return function(arr: IterableIterator<T> | T[]): boolean {
+  return function (arr: IterableIterator<T> | T[]): boolean {
     const { done } = filter(predicate)(arr).next()
     return !done
   }
@@ -48,7 +60,7 @@ export function findBest<T>(predicate: (prev: T, curr: T, index: number) => bool
 }
 
 export function take(n: number) {
-  return function*<T>(arr: IterableIterator<T> | T[]) {
+  return function* <T>(arr: IterableIterator<T> | T[]) {
     let i = 0
     for (let el of arr) {
       if (i >= n) {
@@ -61,7 +73,7 @@ export function take(n: number) {
 }
 
 export function skip(n: number) {
-  return function*<T>(arr: IterableIterator<T> | T[]) {
+  return function* <T>(arr: IterableIterator<T> | T[]) {
     let i = 0
     for (let el of arr) {
       i = i + 1
@@ -73,10 +85,10 @@ export function skip(n: number) {
   }
 }
 
-export function compose(...ops: ((a: any) => any)[]): ((startArg: any) => any) {
+export function compose(...ops: ((a: any) => any)[]): (startArg: any) => any {
   return ops.reduceRight((a, b) => (arg: any) => b(a(arg)))
 }
 
-export function pipe(...ops: ((a: any) => any)[]): ((startArg: any) => any) {
+export function pipe(...ops: ((a: any) => any)[]): (startArg: any) => any {
   return ops.reduce((a, b) => (arg: any) => b(a(arg)))
 }

@@ -1,4 +1,4 @@
-import { filter, reduce, some, findBest, take, skip, compose, pipe, map } from '../'
+import { filter, reduce, some, findBest, take, skip, compose, pipe, map, forEach } from '../'
 
 test(`Filter out string longer than 3`, () => {
   // Arrange
@@ -22,6 +22,18 @@ test(`Map number to strings`, () => {
 
   // Assert
   expect(result).toEqual(['1', '2', '3', '4'])
+})
+
+test(`Call function for all elements`, () => {
+  // Arrange
+  const arr = [1, 2, 3, 4]
+  const fn = jest.fn()
+
+  // Act
+  forEach(fn)(arr);
+
+  // Assert
+  expect(fn).toBeCalledTimes(4)
 })
 
 test(`Concat all strings`, () => {
