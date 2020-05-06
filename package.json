@@ -17,7 +17,7 @@
     "@types/jest": "25.2.1",
     "typescript": "3.8.3",
     "jest": "26.0.1",
-    "ts-jest": "25.4.0"
+    "ts-jest": "25.5.0"
   },
   "homepage": "https://github.com/tjoskar/iterable",
   "keywords": [
